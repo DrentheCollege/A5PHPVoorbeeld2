@@ -40,7 +40,7 @@ class CompanyController extends Controller
             'name' =>'required'
         ]);
         Company::create($request->all());
-        return redirect()->route('companies.index')->with('succes', 'Company saved!');
+        return redirect()->route('companies.index')->with('succes', 'Bedrijf is bewaard!');
     }
 
     /**
@@ -78,7 +78,7 @@ class CompanyController extends Controller
             'name' =>'required'
         ]);
         $company->update($request->all());
-        return redirect()->route('/companies')->with('succes', 'Company updated!');
+        return redirect()->route('/companies')->with('succes', 'Bedrijf is aangepast!');
     }
 
     /**
@@ -91,6 +91,6 @@ class CompanyController extends Controller
     {
         $company->delete();
 
-        return redirect('/companies')->with('success', 'Company deleted!');
+        return redirect('/companies')->with('success', 'Bedrijf is verwijderd!');
     }
 }

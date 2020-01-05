@@ -47,7 +47,7 @@ class ContactController extends Controller
         ]);
 
         Contact::create($request->all());
-        return redirect()->route('contacts.index')->with('success', 'Contact saved!');
+        return redirect()->route('contacts.index')->with('success', 'Contact is bewaard!');
     }
 
     /**
@@ -92,7 +92,7 @@ class ContactController extends Controller
 
         $contact->update($request->all());
 
-        return redirect('/contacts')->with('success', 'Contact updated!');
+        return redirect('/contacts')->with('success', 'Contact is aangepast!');
     }
 
     /**
@@ -106,6 +106,6 @@ class ContactController extends Controller
               // $contact = Contact::find($id);
         $contact->delete();
 
-        return redirect('/contacts')->with('success', 'Contact deleted!');
+        return redirect('/contacts')->with('success', 'Contact is verwijderd!');
     }
 }

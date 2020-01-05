@@ -1,6 +1,6 @@
-@extends('base')
+@extends('layouts.app')
 
-@section('main')
+@section('content')
 <div class="col-sm-12">
 
   @if(session()->get('success'))
