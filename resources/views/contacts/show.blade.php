@@ -30,10 +30,6 @@
                 <td>{{ $contact->last_name }}</td>
             </tr>
             <tr>
-              <td>Bedrijf</td>
-              <td>{{$contact->company->name}}</td>
-            </tr>
-            <tr>
                 <td>Email:</td>
                 <td>{{ $contact->email }}</td>
             </tr>
