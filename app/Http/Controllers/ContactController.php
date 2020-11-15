@@ -70,6 +70,7 @@ class ContactController extends Controller
     public function edit(Contact $contact)
     {
          $companies = Company::pluck('name', 'id');
+
          return view('contacts.edit', compact('contact', 'companies'));
     }
 
