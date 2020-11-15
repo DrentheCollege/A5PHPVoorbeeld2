@@ -27,7 +27,7 @@
           <td>Functie</td>
           <td>Woonplaats</td>
           <td>Land</td>
-          <td colspan = 2>Actions</td>
+          <td colspan = 2>Acties</td>
         </tr>
     </thead>
     <tbody>

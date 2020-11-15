@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Contact;
-use App\Company;
+use App\Models\Contact;
+use App\Models\Company;
 
 class ContactController extends Controller
 {
@@ -27,8 +27,8 @@ class ContactController extends Controller
      */
     public function create()
     {
-        $companies = Company::orderby('name','desc')->pluck('name', 'id');
-        return view('contacts.create', compact('companies'));
+         $companies = Company::pluck('name', 'id');
+         return view('contacts.create', compact('companies'));
 	  }
 
     /**
@@ -42,8 +42,8 @@ class ContactController extends Controller
         $request->validate([
             'first_name'=>'required',
             'last_name'=>'required',
-            'email'=>'required',
-            'company_id'=>'required'
+             'email'=>'required',
+             'company_id'=>'required'
         ]);
 
         Contact::create($request->all());
@@ -69,9 +69,8 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        $companies = Company::pluck('name', 'id');
-
-        return view('contacts.edit', compact('contact', 'companies'));
+         $companies = Company::pluck('name', 'id');
+         return view('contacts.edit', compact('contact', 'companies'));
     }
 
     /**
@@ -86,8 +85,8 @@ class ContactController extends Controller
         $request->validate([
             'first_name'=>'required',
             'last_name'=>'required',
-            'email'=>'required',
-            'company_id'=>'required'
+             'email'=>'required',
+             'company_id'=>'required'
         ]);
 
         $contact->update($request->all());
