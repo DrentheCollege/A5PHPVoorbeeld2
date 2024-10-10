@@ -35,7 +35,11 @@
         <tr>
             <td>{{$contact->id}}</td>
             <td>{{$contact->first_name}} {{$contact->last_name}}</td>
-            <td>{{$contact->company->name}}</td>
+            <td>
+              @if ($contact->company != null) 
+                {{$contact->company->name}}
+              @endif
+            </td>
             <td>{{$contact->email}}</td>
             <td>{{$contact->job_title}}</td>
             <td>{{$contact->city}}</td>

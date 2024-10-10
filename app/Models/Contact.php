@@ -9,12 +9,12 @@ class Contact extends Model
 {
     use HasFactory;
 
-     protected $fillable = [
-        'first_name', 'last_name','company_id','email','city','country','job_title'
+    protected $fillable = [
+        'first_name', 'last_name','email','city','country','job_title', 'company_id'
     ];
 
     public function company(){
-      return $this->belongsTo('App\Models\Company', 'company_id');
+        return $this->belongsTo('App\Models\Company', 'company_id');
     }
 
 }

@@ -29,10 +29,20 @@
             </div>
 
             <div class="form-group">
-                <label for="company">Bedrijf</label>
-                {!! Form::select('company_id', $companies,
-                      $contact->company_id, ['class' => 'form-control']) !!}
-            </div>
+              <label for="company_id">Bedrijf:</label>
+              <select class="form-control" name="company_id" id="company_id">
+              <option value="none" selected disabled hidden>
+              Selecteer een bedrijf indien gewenst </option>
+                @foreach($companies as $c_id => $name)
+                
+                  <option value="{{$c_id}}" 
+                  @if ($contact->company_id==$c_id)
+                  selected
+                  @endif
+                  >{{ $name}}</option>
+                @endforeach
+              </select>
+          </div>
 
             <div class="form-group">
                 <label for="email">Email:</label>
